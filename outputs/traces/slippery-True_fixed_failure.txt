@@ -1,0 +1,170 @@
+slippery=True, policy=fixed, batch=11, outcome=hole
+
+episode seed = 11000
+start
+
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 1: action=RIGHT -> state 0, reward 0
+  (Right)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 2: action=RIGHT -> state 4, reward 0
+  (Right)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+
+step 3: action=LEFT -> state 0, reward 0
+  (Left)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 4: action=RIGHT -> state 4, reward 0
+  (Right)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+
+step 5: action=LEFT -> state 4, reward 0
+  (Left)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+
+step 6: action=LEFT -> state 4, reward 0
+  (Left)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+
+step 7: action=LEFT -> state 0, reward 0
+  (Left)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 8: action=RIGHT -> state 0, reward 0
+  (Right)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 9: action=RIGHT -> state 4, reward 0
+  (Right)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+
+step 10: action=LEFT -> state 4, reward 0
+  (Left)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+
+step 11: action=LEFT -> state 4, reward 0
+  (Left)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+
+step 12: action=LEFT -> state 4, reward 0
+  (Left)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+
+step 13: action=LEFT -> state 4, reward 0
+  (Left)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+
+step 14: action=LEFT -> state 8, reward 0
+  (Left)
+SFFF
+FHFH
+[41mF[0mFFH
+HFFG
+
+step 15: action=UP -> state 9, reward 0
+  (Up)
+SFFF
+FHFH
+F[41mF[0mFH
+HFFG
+
+step 16: action=DOWN -> state 13, reward 0
+  (Down)
+SFFF
+FHFH
+FFFH
+H[41mF[0mFG
+
+step 17: action=RIGHT -> state 13, reward 0
+  (Right)
+SFFF
+FHFH
+FFFH
+H[41mF[0mFG
+
+step 18: action=RIGHT -> state 14, reward 0
+  (Right)
+SFFF
+FHFH
+FFFH
+HF[41mF[0mG
+
+step 19: action=RIGHT -> state 10, reward 0
+  (Right)
+SFFF
+FHFH
+FF[41mF[0mH
+HFFG
+
+step 20: action=LEFT -> state 14, reward 0
+  (Left)
+SFFF
+FHFH
+FFFH
+HF[41mF[0mG
+
+step 21: action=RIGHT -> state 10, reward 0
+  (Right)
+SFFF
+FHFH
+FF[41mF[0mH
+HFFG
+
+step 22: action=LEFT -> state 6, reward 0
+  (Left)
+SFFF
+FH[41mF[0mH
+FFFH
+HFFG
+
+step 23: action=DOWN -> state 7, reward 0
+  (Down)
+SFFF
+FHF[41mH[0m
+FFFH
+HFFG

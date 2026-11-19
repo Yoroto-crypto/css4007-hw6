@@ -1,0 +1,65 @@
+slippery=False, policy=fixed, batch=11, outcome=goal
+
+episode seed = 11000
+start
+
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 1: action=RIGHT -> state 1, reward 0
+  (Right)
+S[41mF[0mFF
+FHFH
+FFFH
+HFFG
+
+step 2: action=RIGHT -> state 2, reward 0
+  (Right)
+SF[41mF[0mF
+FHFH
+FFFH
+HFFG
+
+step 3: action=DOWN -> state 6, reward 0
+  (Down)
+SFFF
+FH[41mF[0mH
+FFFH
+HFFG
+
+step 4: action=DOWN -> state 10, reward 0
+  (Down)
+SFFF
+FHFH
+FF[41mF[0mH
+HFFG
+
+step 5: action=LEFT -> state 9, reward 0
+  (Left)
+SFFF
+FHFH
+F[41mF[0mFH
+HFFG
+
+step 6: action=DOWN -> state 13, reward 0
+  (Down)
+SFFF
+FHFH
+FFFH
+H[41mF[0mFG
+
+step 7: action=RIGHT -> state 14, reward 0
+  (Right)
+SFFF
+FHFH
+FFFH
+HF[41mF[0mG
+
+step 8: action=RIGHT -> state 15, reward 1
+  (Right)
+SFFF
+FHFH
+FFFH
+HFF[41mG[0m

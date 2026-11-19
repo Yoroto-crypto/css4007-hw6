@@ -1,0 +1,44 @@
+slippery=False, policy=random, batch=11, outcome=hole
+
+episode seed = 11000
+start
+
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 1: action=LEFT -> state 0, reward 0
+  (Left)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 2: action=LEFT -> state 0, reward 0
+  (Left)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 3: action=UP -> state 0, reward 0
+  (Up)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 4: action=DOWN -> state 4, reward 0
+  (Down)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+
+step 5: action=RIGHT -> state 5, reward 0
+  (Right)
+SFFF
+F[41mH[0mFH
+FFFH
+HFFG

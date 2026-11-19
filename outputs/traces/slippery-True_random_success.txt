@@ -1,0 +1,156 @@
+slippery=True, policy=random, batch=11, outcome=goal
+
+episode seed = 11015
+start
+
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 1: action=LEFT -> state 0, reward 0
+  (Left)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 2: action=UP -> state 0, reward 0
+  (Up)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 3: action=LEFT -> state 0, reward 0
+  (Left)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 4: action=LEFT -> state 0, reward 0
+  (Left)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 5: action=RIGHT -> state 0, reward 0
+  (Right)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 6: action=UP -> state 0, reward 0
+  (Up)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 7: action=UP -> state 0, reward 0
+  (Up)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+
+step 8: action=RIGHT -> state 4, reward 0
+  (Right)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+
+step 9: action=LEFT -> state 8, reward 0
+  (Left)
+SFFF
+FHFH
+[41mF[0mFFH
+HFFG
+
+step 10: action=DOWN -> state 9, reward 0
+  (Down)
+SFFF
+FHFH
+F[41mF[0mFH
+HFFG
+
+step 11: action=UP -> state 8, reward 0
+  (Up)
+SFFF
+FHFH
+[41mF[0mFFH
+HFFG
+
+step 12: action=RIGHT -> state 9, reward 0
+  (Right)
+SFFF
+FHFH
+F[41mF[0mFH
+HFFG
+
+step 13: action=LEFT -> state 13, reward 0
+  (Left)
+SFFF
+FHFH
+FFFH
+H[41mF[0mFG
+
+step 14: action=RIGHT -> state 14, reward 0
+  (Right)
+SFFF
+FHFH
+FFFH
+HF[41mF[0mG
+
+step 15: action=LEFT -> state 13, reward 0
+  (Left)
+SFFF
+FHFH
+FFFH
+H[41mF[0mFG
+
+step 16: action=RIGHT -> state 14, reward 0
+  (Right)
+SFFF
+FHFH
+FFFH
+HF[41mF[0mG
+
+step 17: action=LEFT -> state 14, reward 0
+  (Left)
+SFFF
+FHFH
+FFFH
+HF[41mF[0mG
+
+step 18: action=DOWN -> state 13, reward 0
+  (Down)
+SFFF
+FHFH
+FFFH
+H[41mF[0mFG
+
+step 19: action=DOWN -> state 13, reward 0
+  (Down)
+SFFF
+FHFH
+FFFH
+H[41mF[0mFG
+
+step 20: action=UP -> state 14, reward 0
+  (Up)
+SFFF
+FHFH
+FFFH
+HF[41mF[0mG
+
+step 21: action=RIGHT -> state 15, reward 1
+  (Right)
+SFFF
+FHFH
+FFFH
+HFF[41mG[0m
