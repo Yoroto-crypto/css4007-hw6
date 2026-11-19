@@ -89,7 +89,7 @@ def main():
                     if key not in saved_traces:
                         saved_traces.add(key)
                         fname = f"{OUT_DIR}/traces/slippery-{slippery}_{policy_name}_{kind}.txt"
-                        with open(fname, "w") as f:
+                        with open(fname, "w", encoding="utf-8") as f:
                             f.write(f"{cond}, policy={policy_name}, batch={batch_seed}, "
                                     f"outcome={res['outcome']}\n\n" + "\n".join(res["trace"]))
         env.close()
@@ -113,7 +113,7 @@ def main():
         lines.append(f"| {r['slippery']} | {r['policy']} | {r['batch_seed']} | {r['Goals /50']} | "
                      f"{r['Holes /50']} | {r['Time limits /50']} | {r['Success %']:.0f} | {r['Mean steps']:.2f} |")
     md = "\n".join(lines)
-    with open(f"{OUT_DIR}/summary.md", "w") as f:
+    with open(f"{OUT_DIR}/summary.md", "w", encoding="utf-8") as f:
         f.write(md + "\n")
     print(md)
     print("\nTraces saved:", sorted(saved_traces))

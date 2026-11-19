@@ -125,12 +125,12 @@ def main():
     out(f"\n{'=' * 60}\nSIMULATION RESULTS (3 batches x 50 episodes, limit {MAX_STEPS} steps)\n" + "\n".join(lines))
     out("\nFor comparison, V(start) from value iteration: " +
         ", ".join(f"{n}: {results[n][0][mdps[n].start]:.3f}" for n in mdps))
-    with open(f"{OUT_DIR}/partC_summary.md", "w") as f:
+    with open(f"{OUT_DIR}/partC_summary.md", "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
     out("")
     run_checks(mdps["A"], mdps["ext"], out)
-    with open(f"{OUT_DIR}/partC_report.txt", "w") as f:
+    with open(f"{OUT_DIR}/partC_report.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(report) + "\n")
 
 

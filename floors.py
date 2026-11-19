@@ -35,7 +35,7 @@ FLOORS = {
 def load_config(path="maps.json"):
     """Read maps, discount, seeds and tile rules from the assignment's maps.json."""
     import json
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 

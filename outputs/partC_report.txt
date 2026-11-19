@@ -1,0 +1,115 @@
+
+============================================================
+MAP A
+.M.G
+.#IH
+S...
+
+V1 map:
+  -1.000   -1.000   10.000    G  0 
+  -1.000    ####    -1.000    H  0 
+  -1.000   -1.000   -1.000   -1.000
+
+V2 at the requested tiles (computed only from V1):
+  (1,2): U=-3.9000, R=8.0000, D=-3.9000, L=-1.9000  ->  V2 = 8.0000, best = ['R']
+  (1,3): U=8.0000, R=10.0000, D=-1.9000, L=-3.9000  ->  V2 = 10.0000, best = ['R']
+  (2,3): U=5.2100, R=-7.3900, D=-2.7100, L=-0.9100  ->  V2 = 5.2100, best = ['U']
+
+Iterations: 12 (converged); final max change = 2.165e-07
+
+Final values:
+   4.200    8.000   10.000    G  0 
+   2.780    ####     5.824    H  0 
+   1.536    2.818    4.242    2.818
+
+Policy (ties broken by order U, R, D, L):
+→  →  →  G
+↑  #  ↑  H
+→  →  ↑  ←
+States with tied best actions: none
+
+============================================================
+MAP ext
+.M.G
+.#IH
+SD.W
+
+V1 map:
+  -1.000   -1.000   10.000    G  0 
+  -1.000    ####    -1.000    H  0 
+  -1.000   -1.000   -1.000   -1.000
+
+V2 at the requested tiles (computed only from V1):
+  (1,2): U=-3.9000, R=8.0000, D=-3.9000, L=-1.9000  ->  V2 = 8.0000, best = ['R']
+  (1,3): U=8.0000, R=10.0000, D=-1.9000, L=-3.9000  ->  V2 = 10.0000, best = ['R']
+  (2,3): U=5.2100, R=-7.3900, D=-2.7100, L=-0.9100  ->  V2 = 5.2100, best = ['U']
+
+Iterations: 11 (converged); final max change = 2.406e-07
+
+Final values:
+   4.200    8.000   10.000    G  0 
+   2.780    ####     5.824    H  0 
+   1.502    2.818    4.242    2.818
+
+Policy (ties broken by order U, R, D, L):
+→  →  →  G
+↑  #  ↑  H
+↑  →  ↑  ←
+States with tied best actions: none
+
+============================================================
+WHAT CHANGED FROM MAP A TO THE EXTENDED MAP
+  (3,1): V 1.536 -> 1.502 (diff -0.034), action R -> U
+
+============================================================
+SIMULATION RESULTS (3 batches x 50 episodes, limit 100 steps)
+| Map | Batch seed | Goals /50 | Holes /50 | Time limits /50 | Mean steps | Mean discounted return |
+| --- | --- | --- | --- | --- | --- | --- |
+| A | 11 | 47 | 3 | 0 | 5.04 | 2.230 |
+| A | 22 | 44 | 6 | 0 | 4.96 | 1.442 |
+| A | 33 | 42 | 8 | 0 | 4.88 | 0.970 |
+| ext | 11 | 50 | 0 | 0 | 5.00 | 1.502 |
+| ext | 22 | 50 | 0 | 0 | 5.00 | 1.502 |
+| ext | 33 | 50 | 0 | 0 | 5.00 | 1.502 |
+
+For comparison, V(start) from value iteration: A: 1.536, ext: 1.502
+
+=== RULE CHECKS ===
+
+1. Walls and boundaries (map A; coordinates are (row,col), 1-based)
+  (1,1) action U (top boundary) -> stays at (1,1), reward -1
+  (1,1) action L (left boundary) -> stays at (1,1), reward -1
+  (3,1) action D (bottom boundary) -> stays at (3,1), reward -1
+  (2,1) action R (wall (2,2) on the right) -> stays at (2,1), reward -1
+  (1,2) action D (wall (2,2) below mud) -> stays at (1,2), reward -3
+  ice (2,3) action L (wall in the chosen direction), each slip handled separately:
+    prob 0.8 -> (2,3) reward -1
+    prob 0.1 -> (1,3) reward -1
+    prob 0.1 -> (3,3) reward -1
+
+2. Ice probabilities sum to 1
+  action U at (2,3): probabilities [0.8, 0.1, 0.1] sum = 1.0
+  action R at (2,3): probabilities [0.8, 0.1, 0.1] sum = 1.0
+  action D at (2,3): probabilities [0.8, 0.1, 0.1] sum = 1.0
+  action L at (2,3): probabilities [0.8, 0.1, 0.1] sum = 1.0
+  non-ice tiles are deterministic (one outcome, probability 1):
+  mud (1,2): all 4 actions have a single outcome with probability 1.0
+  sand (3,2): all 4 actions have a single outcome with probability 1.0
+  water (3,4): all 4 actions have a single outcome with probability 1.0
+  start (3,1): all 4 actions have a single outcome with probability 1.0
+
+3. Rewards for ending a move on each floor type
+  (1,1) R -> (1,2) (mud): reward -3
+  (1,1) D -> (2,1) (floor): reward -1
+  (3,1) R -> (3,2) (sand): reward -2
+  (3,3) R -> (3,4) (water): reward -5
+  (1,3) R -> (1,4) (goal): reward 10
+  (3,4) U -> (2,4) (hole): reward -10
+
+4. Terminal handling
+  (1,4) is terminal: no transitions, no further rewards
+  (2,4) is terminal: no transitions, no further rewards
+  final V at G (1,4) = 0.0, at H (2,4) = 0.0
+  episode from (1,3) moving R: rewards [10], steps 1, outcome goal (episode stops; nothing is paid after the goal)
+
+All rule checks passed.
